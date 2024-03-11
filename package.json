@@ -1,0 +1,17 @@
+{
+  "name": "advance-js-session",
+  "version": "0.0.1",
+  "description": "Learning JS Advance topics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JS",
+    "basic",
+    "JS",
+    "Topics"
+  ],
+  "author": "Praveen",
+  "license": "MIT"
+}

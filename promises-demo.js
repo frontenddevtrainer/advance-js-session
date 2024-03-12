@@ -35,15 +35,21 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 var setTimeoutPromise = function (timeout) {
-    return new Promise(function (resolve) {
+    return new Promise(function (resolve, reject) {
         setTimeout(function () {
-            resolve(new Date().toISOString());
+            var random = Math.random();
+            if (random > 0.5) {
+                resolve(new Date().toISOString());
+            }
+            else {
+                reject(new Date().toISOString());
+            }
         }, timeout);
     });
 };
 function run() {
     return __awaiter(this, void 0, void 0, function () {
-        var requests, responses1, a, b, c, d, responses2;
+        var requests, responses1, error_1, a, b, c, d, responses2, error_2;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -53,25 +59,39 @@ function run() {
                         setTimeoutPromise(500),
                         setTimeoutPromise(500),
                     ];
-                    return [4 /*yield*/, Promise.all(requests)];
+                    _a.label = 1;
                 case 1:
+                    _a.trys.push([1, 3, , 4]);
+                    return [4 /*yield*/, Promise.race(requests)];
+                case 2:
                     responses1 = _a.sent();
                     console.log(responses1);
-                    return [4 /*yield*/, setTimeoutPromise(500)];
-                case 2:
-                    a = _a.sent();
-                    return [4 /*yield*/, setTimeoutPromise(500)];
+                    return [3 /*break*/, 4];
                 case 3:
-                    b = _a.sent();
-                    return [4 /*yield*/, setTimeoutPromise(500)];
+                    error_1 = _a.sent();
+                    console.log(error_1);
+                    return [3 /*break*/, 4];
                 case 4:
-                    c = _a.sent();
+                    _a.trys.push([4, 9, , 10]);
                     return [4 /*yield*/, setTimeoutPromise(500)];
                 case 5:
+                    a = _a.sent();
+                    return [4 /*yield*/, setTimeoutPromise(500)];
+                case 6:
+                    b = _a.sent();
+                    return [4 /*yield*/, setTimeoutPromise(500)];
+                case 7:
+                    c = _a.sent();
+                    return [4 /*yield*/, setTimeoutPromise(500)];
+                case 8:
                     d = _a.sent();
                     responses2 = [a, b, c, d];
                     console.log(responses2);
-                    return [2 /*return*/];
+                    return [3 /*break*/, 10];
+                case 9:
+                    error_2 = _a.sent();
+                    return [3 /*break*/, 10];
+                case 10: return [2 /*return*/];
             }
         });
     });

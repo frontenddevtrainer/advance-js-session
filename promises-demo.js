@@ -43,23 +43,34 @@ var setTimeoutPromise = function (timeout) {
 };
 function run() {
     return __awaiter(this, void 0, void 0, function () {
-        var a, b, c, d, responses;
+        var requests, responses1, a, b, c, d, responses2;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, setTimeoutPromise(500)];
+                case 0:
+                    requests = [
+                        setTimeoutPromise(500),
+                        setTimeoutPromise(500),
+                        setTimeoutPromise(500),
+                        setTimeoutPromise(500),
+                    ];
+                    return [4 /*yield*/, Promise.all(requests)];
                 case 1:
-                    a = _a.sent();
+                    responses1 = _a.sent();
+                    console.log(responses1);
                     return [4 /*yield*/, setTimeoutPromise(500)];
                 case 2:
-                    b = _a.sent();
+                    a = _a.sent();
                     return [4 /*yield*/, setTimeoutPromise(500)];
                 case 3:
-                    c = _a.sent();
+                    b = _a.sent();
                     return [4 /*yield*/, setTimeoutPromise(500)];
                 case 4:
+                    c = _a.sent();
+                    return [4 /*yield*/, setTimeoutPromise(500)];
+                case 5:
                     d = _a.sent();
-                    responses = [a, b, c, d];
-                    console.log(responses);
+                    responses2 = [a, b, c, d];
+                    console.log(responses2);
                     return [2 /*return*/];
             }
         });
